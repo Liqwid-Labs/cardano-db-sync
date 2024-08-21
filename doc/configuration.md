@@ -45,7 +45,7 @@ Warning: This will irreversibly delete data from existing snapshots.
 Here are the exact queries db-sync with this flag will run after restoring a snapshot:
 
 ```sql
-update redeemer set fee = null;
+update redeemer set fee = null where fee is not null;
 delete from reward;
 delete from epoch_stake;
 delete from ada_pots;
